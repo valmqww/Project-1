@@ -1,4 +1,4 @@
-from datetime import datetime
+import datetime
 
 events = []
 
@@ -35,7 +35,7 @@ def add_event():
     date_str = input("Дата: ")
     category = input("Категорія/опис: ")
     try:
-        date = datetime.strptime(date_str, "%Y-%m-%d").date()
+        date = datetime.datetime.strptime(date_str, "%Y-%m-%d").date()
         events.append({"name": name, "date": date, "category": category})
         print("Подію додано успішно!")
     except ValueError:
