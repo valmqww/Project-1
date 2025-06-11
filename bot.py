@@ -53,7 +53,7 @@ def show_events():
         return
     print("Список подій:")
     for event in events:
-        print(f"- {event['name']} ({event['date']}) — {event['category']}")
+        print(f" Назва: {event['name']}, Дата: {event['date']}, Категорія/Опис: {event['category']}")
 
 '''Призначення:
 Показує тільки ті події, які відбуваються на цьому тижні (з понеділка по неділю).
@@ -72,7 +72,7 @@ def events_this_week():
         return
     print("Події на цьому тижні:")
     for event in week_events:
-        print(f"- {event['name']} ({event['date']}) — {event['category']}")
+        print(f" Назва: {event['name']}, Дата: {event['date']}, Категорія/Опис: {event['category']}")
 
 '''Призначення:
 Дозволяє знайти події за ключовим словом у категорії.
@@ -89,7 +89,7 @@ def search_by_category():
         return
     print("Знайдені події:")
     for event in matches:
-        print(f"- {event['name']} ({event['date']}) — {event['category']}")
+        print(f" Назва: {event['name']}, Дата: {event['date']}, Категорія/Опис: {event['category']}")
 
 '''Призначення:
 Видаляє подію зі списку events за її назвою і датою.
@@ -145,6 +145,11 @@ def main():
             break
         else:
             print("Невідома команда. Введіть 'допомога' для списку доступних команд.")
-
+            
+'''Призначення:
+Забезпечує запуск функції main() тільки тоді, коли файл запускається напряму, а не імпортується в інший.
+Принцип роботи:
+Перевіряє, чи файл виконується як головний.
+Якщо так — запускає main().'''
 if __name__ == "__main__":
     main()
